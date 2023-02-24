@@ -14,12 +14,21 @@ public class GoogleResultPage extends GooglePage {
         super();
     }
 
+    /**
+     * Method will return the input By object selector
+     *
+     * @return By
+     */
     @Override
     public By getGoogleSearchInput() {
         return getByOfAnElement(By.tagName("input"), By.xpath("//img[@alt='Google']"), ElementPosition.toRightOf);
 
     }
 
+    /**
+     * Method will extract the Totals of results from the description
+     * @return
+     */
     public Double getResultStatsTotal() {
         String text = $(By.id(stactsId)).getText();
         String total_results = text.split(" ")[1].replaceAll(",", "");

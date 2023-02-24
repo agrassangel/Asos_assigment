@@ -13,9 +13,20 @@ public abstract class GooglePage extends PageObject {
     public GooglePage() {
         super();
     }
-
+    /**
+     * Method will return the input By object selector
+     * @return
+     */
     public abstract By getGoogleSearchInput();
 
+    /**
+     * Method will return the input By object selector according to the
+     * position target_element has from reference_element
+     * @param target_element
+     * @param reference_element
+     * @param position
+     * @return
+     */
     public By getByOfAnElement(By target_element, By reference_element, ElementPosition position) {
         switch (position) {
             case toRightOf:
